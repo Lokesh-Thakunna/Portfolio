@@ -1,0 +1,14 @@
+# node
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# env files
+.env
+
+# build
+dist/
+build/
+
+# OS
+.DS_Store
