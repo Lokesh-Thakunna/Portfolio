@@ -12,6 +12,8 @@ const skills = [
   { name: "Blockchain" },
   { name: "Unity" },
   { name: "Git" },
+  { name: "Scrapy" },
+  { name: "Tailwind CSS" },
   // 👉 Add more like this:
   // { name: "Docker" },
   // { name: "AWS" },

@@ -20,6 +20,15 @@ const projects = [
     github: "https://github.com/yourusername/web-automation",
     demo: "",
   },
+  {
+  title: "Government Schemes Information & Eligibility System",
+  description:
+    "A full-stack web application that provides centralized access to Indian government welfare schemes with search, category filtering, scheme comparison, and eligibility checking. Includes an admin panel for managing and updating scheme data.",
+  tech: [
+    "React","FastAPI","MongoDB","Axios","Tailwind CSS","Python"],
+  github: "https://github.com/yourusername/government-schemes-system",
+  demo: "",
+  },
 ];
 
 /* ======================================================
