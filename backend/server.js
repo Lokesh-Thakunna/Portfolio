@@ -1,35 +1,23 @@
-import express from "express";
-import cors from "cors";
-import dotenv from "dotenv";
-import contactRoutes from "./routes/contactRoutes.js";
-import connectDB from "./config/db.js";
-import adminRoutes from "./routes/adminRoutes.js";
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+require("dotenv").config();
 
-
-dotenv.config();
+const contactRoutes = require("./routes/contactRoutes");
 
 const app = express();
 
-/* Connect DB */
-connectDB();
-
-/* Middlewares */
-app.use(cors({
-  origin: "*"
-}));
+app.use(cors());
 app.use(express.json());
 
-/* Routes */
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => console.error(err));
+
 app.use("/api/contact", contactRoutes);
-app.use("/api/admin", adminRoutes);
 
-
-app.get("/", (req, res) => {
-  res.send("Portfolio Backend Running 🚀");
-});
-
-/* Start Server */
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`✅ Server running on port ${PORT}`);
-});
+app.listen(PORT, () =>
+  console.log(`Server running on port ${PORT}`)
+);
